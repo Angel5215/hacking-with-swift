@@ -12,3 +12,7 @@ Get started coding in Swift by making an image viewer app and learning key conce
 
 Make a game using UIKit, and learn about integers, buttons, colors and actions.
 
+## [Project 3](Project03). Social Media.
+
+Ley users share to Facebook and Twitter by modifying Project 1.
+
