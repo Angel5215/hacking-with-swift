@@ -22,6 +22,7 @@
 		FA4862BD2143B24E00B2B098 /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA4862B32143B24E00B2B098 /* nssl0049.jpg */; };
 		FA4862BE2143B24E00B2B098 /* nssl0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA4862B42143B24E00B2B098 /* nssl0051.jpg */; };
 		FA4862BF2143B24E00B2B098 /* nssl0091.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA4862B52143B24E00B2B098 /* nssl0091.jpg */; };
+		FA4862C12143BFFE00B2B098 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4862C02143BFFE00B2B098 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FA4862B32143B24E00B2B098 /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
 		FA4862B42143B24E00B2B098 /* nssl0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0051.jpg; sourceTree = "<group>"; };
 		FA4862B52143B24E00B2B098 /* nssl0091.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0091.jpg; sourceTree = "<group>"; };
+		FA4862C02143BFFE00B2B098 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				FA4862992143B15E00B2B098 /* AppDelegate.swift */,
 				FA48629B2143B15E00B2B098 /* ViewController.swift */,
+				FA4862C02143BFFE00B2B098 /* DetailViewController.swift */,
 				FA48629D2143B15E00B2B098 /* Main.storyboard */,
 				FA4862A02143B15E00B2B098 /* Assets.xcassets */,
 				FA4862A22143B15E00B2B098 /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4862C12143BFFE00B2B098 /* DetailViewController.swift in Sources */,
 				FA48629C2143B15E00B2B098 /* ViewController.swift in Sources */,
 				FA48629A2143B15E00B2B098 /* AppDelegate.swift in Sources */,
 			);
