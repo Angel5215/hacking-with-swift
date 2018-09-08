@@ -8,6 +8,7 @@ Source code made by following the **Hacking With Swift** book written by Paul Hu
 
 Get started coding in Swift by making an image viewer app and learning key concepts.
 
+## [Project 2](Project02). Guess the Flag
 
-
+Make a game using UIKit, and learn about integers, buttons, colors and actions.
 
