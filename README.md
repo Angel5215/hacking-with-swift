@@ -16,3 +16,7 @@ Make a game using UIKit, and learn about integers, buttons, colors and actions.
 
 Ley users share to Facebook and Twitter by modifying Project 1.
 
+## [Project 4](Project04). Easy Browser.
+
+Embed Web Kit and learn about delegation, KVO, classes and `UIToolbar`.
+
