@@ -1,6 +1,24 @@
 
 # Project 1. Storm Viewer.
 
+## Concepts
+
+- Constants (`let`) and variables (`var`)
+- Method overrides (`override` keyword)
+- Table View Controller
+- Table View Cell
+- `FileManager`
+- Typecasting (`as?`)
+- Arrays (`[String]`)
+- Loops (`for` keyword)
+- View Controllers
+- Storyboards
+- Outlets (`@IBOutlet`)
+- Auto Layout
+- `UIImage`
+- `UIKit`
+
+
 ## Notes
 
 An iOS app is a directory containing lots of files: the binary, the media assets, visual layout files, and a variety of other things. These app directories are called **Bundles**.
