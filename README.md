@@ -16,7 +16,10 @@ Make a game using UIKit, and learn about integers, buttons, colors and actions.
 
 Ley users share to Facebook and Twitter by modifying Project 1.
 
-## [Project 4](Project04). Easy Browser.
+## [Project 4](Project04). Easy Browser.
 
 Embed Web Kit and learn about delegation, KVO, classes and `UIToolbar`.
 
+## [Project 5](Project05). Word Scramble.
+
+Create an anagram game while learning about closures and booleans.
