@@ -23,3 +23,8 @@ Embed Web Kit and learn about delegation, KVO, classes and `UIToolbar`.
 ## [Project 5](Project05). Word Scramble.
 
 Create an anagram game while learning about closures and booleans.
+
+## [Project 6](Project06). Auto Layout.
+
+Get to grips with Auto Layout using practical examples and code.
+
