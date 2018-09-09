@@ -34,9 +34,15 @@ This string describes how we want the layout to look. The VFL string gets conver
 
 In other words, this means "horizontally, I want `label1` to to edge to edge in my view". What's `label1`? The label specified by the key `"label1"` in the `viewsDictionary`.
 
+Other rules:
 
+* `-`: This symbol means **space**. It is 10 points by default, but it can be customized.
 
+### Priority
 
+You can give any layout constraint a **priority**, and Auto Layout will do its best to make it work.
 
+Constant priority is a value between 1 and 1000, where 1000 means **this is absolutely required** and anything less is optional. By default, all constraints are priority 1000.
 
+**Constraints are all evaluated from highest priority to the lowest, but ALL are taken into account**.
 

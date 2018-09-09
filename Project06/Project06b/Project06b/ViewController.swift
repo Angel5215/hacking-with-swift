@@ -65,8 +65,12 @@ class ViewController: UIViewController {
 			view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|", options: [], metrics: nil, views: viewsDictionary))
 		}
 		
-		//	Add vertical constraints using VFL. 
-		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1]-[label2]-[label3]-[label4]-[label5]", options: [], metrics: nil, views: viewsDictionary))
+		//	Add vertical constraints using VFL.
+		// 	1. The last label mush be at least 10 points away from the bottom.
+		// 	2. Each of the five labels must be 88 points high.
+		//	When specifying size of an space, the symbol "-" goes before and after the size, so "-" becomes "-(>=10)-"
+		let metrics = ["labelHeight": 88]
+		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight)]-[label2(==labelHeight)]-[label3(==labelHeight)]-[label4(==labelHeight)]-[label5(==labelHeight)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
 		
 	}
 
