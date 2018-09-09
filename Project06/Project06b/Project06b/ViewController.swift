@@ -69,8 +69,9 @@ class ViewController: UIViewController {
 		// 	1. The last label mush be at least 10 points away from the bottom.
 		// 	2. Each of the five labels must be 88 points high.
 		//	When specifying size of an space, the symbol "-" goes before and after the size, so "-" becomes "-(>=10)-"
+		//	3. Priority is assigned with @
 		let metrics = ["labelHeight": 88]
-		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(==labelHeight)]-[label2(==labelHeight)]-[label3(==labelHeight)]-[label4(==labelHeight)]-[label5(==labelHeight)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
+		view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]-(>=10)-|", options: [], metrics: metrics, views: viewsDictionary))
 		
 	}
 

@@ -46,3 +46,20 @@ Constant priority is a value between 1 and 1000, where 1000 means **this is abso
 
 **Constraints are all evaluated from highest priority to the lowest, but ALL are taken into account**.
 
+### Auto Layout anchors
+
+Every `UIView` has a set of anchors that define its layouts rules. The most important ones are:
+
+* `widthAnchor`
+* `heightAnchor`
+* `topAnchor`
+* `bottomAnchor`
+* `rightAnchor`
+* `leftAnchor`
+* `leadingAnchor`
+* `trailingAnchor`
+* `centerXAnchor`
+* `centerYAnchor`
+
+Left and leading anchors are the same with languages that are read from left to right. However, for right-to-left languages (Hebrew and Arabic), leading and trailing flip around so that leading is equal to right and trailing is equal to left.
+
