@@ -3,6 +3,8 @@
 
 ## Concepts
 
+- Table View (reload data, insert rows using an `IndexPath`)
+- Add a `UITextField` to an `UIAlertController`
 - Closures (trailing closures)
 - Capture list (`[unowned self, ac]`)
 - Files

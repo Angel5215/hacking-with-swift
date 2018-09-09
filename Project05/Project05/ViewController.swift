@@ -13,6 +13,7 @@ class ViewController: UITableViewController {
 	
 	var allWords = [String]()
 	var usedWords = [String]()
+	var currentWord = -1
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,16 +24,35 @@ class ViewController: UITableViewController {
 			if let startWords = try? String(contentsOfFile: startWordsPath) {
 				allWords = startWords.components(separatedBy: "\n")
 			} else {
-				allWords = ["silkworm"]
+				loadDefaultWords()
 			}
+		} else {
+			loadDefaultWords()
 		}
+		
+		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startGame))
 		
 		startGame()
 	}
 	
-	func startGame() {
-		allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
-		title = allWords[0]
+	//	Enhancement 4.
+	func loadDefaultWords() {
+		allWords = ["berserker", "analyze", "cottage", "honorary", "effective", "beach", "identity", "apparition", "ageless", "program", "dismember", "cows", "shark", "actuality", "creeper", "germ", "virgin", "folding", "skyline", "dead", "trust", "circus", "external", "show", "gladness", "pigeon", "risky", "queen", "heating", "honorary", "evidence", "salt", "god", "heavy", "hearted", "immunity", "perplexing", "evolution", "mightiest", "popular", "bottomless", "calculation", "hell", "average", "observer", "cathedral", "homicidal", "honor", "sideways", "flood", "contaminant"]
+	}
+	
+	@objc func startGame() {
+		
+		//	Enhancement 5.
+		if currentWord == allWords.count - 1 || currentWord == -1 {
+			allWords = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: allWords) as! [String]
+			currentWord = 0
+		} else {
+			currentWord += 1
+		}
+		
+		print("The current index is \(currentWord)")
+		
+		title = allWords[currentWord]
 		
 		usedWords.removeAll(keepingCapacity: true)
 		tableView.reloadData()
@@ -55,8 +75,11 @@ class ViewController: UITableViewController {
 	func submit(answer: String) {
 		let lowerAnswer = answer.lowercased()
 		
-		let errorTitle: String
-		let errorMessage: String
+		//	Enhancement 3. Word is the same as the title.
+		if lowerAnswer == title {
+			showErrorMessage(title: "Word is equal", message: "You can't just repeat the same word!")
+			return
+		}
 		
 		if isPossible(word: lowerAnswer) {
 			if isOriginal(word: lowerAnswer) {
@@ -69,19 +92,20 @@ class ViewController: UITableViewController {
 					return
 					
 				} else {
-					errorTitle = "Word not recognised"
-					errorMessage = "You can't just make them up, you know!"
+					//	Enhancement 2. Refactor
+					showErrorMessage(title: "Word not recognised", message: "You can't just make them up, you know!")
 				}
 			} else {
-				errorTitle = "Word used already"
-				errorMessage = "Be more original!"
+				showErrorMessage(title: "Word used already", message: "Be more original!")
 			}
 		} else {
-			errorTitle = "Word not possible"
-			errorMessage = "You can't spell that word from \(title!.lowercased())"
+			showErrorMessage(title: "Word not possible", message: "You can't spell that word from \(title!.lowercased())")
 		}
-		
-		let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+	}
+	
+	
+	func showErrorMessage(title: String, message: String) {
+		let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		ac.addAction(UIAlertAction(title: "OK", style: .default))
 		present(ac, animated: true)
 	}
@@ -105,6 +129,11 @@ class ViewController: UITableViewController {
 	}
 	
 	func isReal(word: String) -> Bool {
+		
+		//	Enhancement 1. Count check
+		if word.count < 3 {
+			return false
+		}
 		
 		//	Class designed to spot spelling errors.
 		let checker = UITextChecker()
