@@ -17,7 +17,7 @@
 
 ## Notes
 
-### Pixels and Points
+### Pixels and Points
 
 Early iOS devices had non-retina screens. This meant a screen resolution of 320 x 480 pixels. So you could place things exactly where you wanted them.
 
