@@ -36,3 +36,7 @@ Make an app to parse Whitehouse petitions using JSON and a tab bar.
 
 Build a word-guessing game and master strings once and for all.
 
+## [Project 9](Project09). Grand Central Dispatch.
+
+Learn how to run complex **tasks in the background** with GCD.
+
