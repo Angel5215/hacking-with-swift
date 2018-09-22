@@ -13,10 +13,10 @@ This is actually divided into two different Xcode projects called `Project06a` a
 ## Concepts in 6b
 
 - Auto Resize
-- NSLayoutConstraints
+- `NSLayoutConstraints`
 - Auto Layout Visual Format Language (VFL)
 
-## Notes
+## Notes
 
 By default, iOS generates Auto Layout constraints for you based on a view's size and position. If we're specifying them by hand, we need to disable this feature setting the property `translatesAutoresizingMaskIntoConstraints` to `false`.
 
