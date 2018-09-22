@@ -28,3 +28,6 @@ Create an anagram game while learning about closures and booleans.
 
 Get to grips with Auto Layout using practical examples and code.
 
+## [Project 7](Project07). Whitehouse Petitions
+
+Make an app to parse Whitehouse petitions using JSON and a tab bar.
