@@ -31,3 +31,8 @@ Get to grips with Auto Layout using practical examples and code.
 ## [Project 7](Project07). Whitehouse Petitions
 
 Make an app to parse Whitehouse petitions using JSON and a tab bar.
+
+## [Project 8](Project08). 7 Swifty Words.
+
+Build a word-guessing game and master strings once and for all.
+
