@@ -102,6 +102,9 @@ class ViewController: UIViewController {
 				ac.addAction(UIAlertAction(title: "Let's go!", style: .default, handler: levelUp))
 				present(ac, animated: true)
 			}
+		} else {
+			//	Incorrect guess substracts 7 points for the modulo operation used to change levels to continue working.
+			score -= 7
 		}
 	}
 	
