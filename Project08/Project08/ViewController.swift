@@ -32,7 +32,8 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		//	view.subviews is an array containing all the UIViews currently placed in the ViewController
-		for subView in view.subviews where subView.tag == 1001 {
+		let buttonsView = view.viewWithTag(1002)!
+		for subView in buttonsView.subviews where subView.tag == 1001 {
 			let btn = subView as! UIButton
 			letterButtons.append(btn)
 			
