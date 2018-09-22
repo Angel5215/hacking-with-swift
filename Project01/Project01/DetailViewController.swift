@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
 	}
 	
 	//	iPhone X only. Hides the home indicator after a few seconds. It reappears if the user touches the screen.
-	override func prefersHomeIndicatorAutoHidden() -> Bool {
+	override var prefersHomeIndicatorAutoHidden: Bool {
 		return navigationController!.hidesBarsOnTap
 	}
 	
