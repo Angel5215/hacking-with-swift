@@ -40,3 +40,7 @@ Build a word-guessing game and master strings once and for all.
 
 Learn how to run complex **tasks in the background** with GCD.
 
+## [Project 10](Project10). Names to Faces.
+
+Get started with `UICollectionView` and the photo library.
+
