@@ -44,3 +44,7 @@ Learn how to run complex **tasks in the background** with GCD.
 
 Get started with `UICollectionView` and the photo library.
 
+## [Project 11](Project11). Pachinko
+
+Dive into SpriteKit to try your hand at fast 2D games.
+
