@@ -37,3 +37,11 @@ func RandomCGFloat(min: Float, max: Float) -> CGFloat {
 func RandomColor() -> UIColor {
 	return UIColor(red: RandomCGFloat(), green: RandomCGFloat(), blue: RandomCGFloat(), alpha: 1)
 }
+
+func RandomPosition(minX: Float, maxX: Float, minY: Float, maxY: Float) -> CGPoint {
+	
+	let x = RandomCGFloat(min: minX, max: maxX)
+	let y = RandomCGFloat(min: minY, max: maxY)
+	
+	return CGPoint(x: x, y: y)
+}

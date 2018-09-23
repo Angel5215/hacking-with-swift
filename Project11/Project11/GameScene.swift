@@ -19,6 +19,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		}
 	}
 	
+	var usedBallsLabel: SKLabelNode!
+	var maxBalls = 5
+	
+	var usedBalls = 0 {
+		didSet {
+			usedBallsLabel.text = "Remaining balls: \(maxBalls - usedBalls)"
+		}
+	}
+	
 	var editLabel: SKLabelNode!
 	
 	var editingMode: Bool = false {
@@ -57,10 +66,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		scoreLabel.position = CGPoint(x: 980, y: 700)
 		addChild(scoreLabel)
 		
+		usedBallsLabel = SKLabelNode(fontNamed: "Chalkduster")
+		usedBallsLabel.text = "Remaining balls: 5"
+		usedBallsLabel.horizontalAlignmentMode = .center
+		usedBallsLabel.position = CGPoint(x: 512, y: 700)
+		addChild(usedBallsLabel)
+		
 		editLabel = SKLabelNode(fontNamed: "Chalkduster")
 		editLabel.text = "Edit"
 		editLabel.position = CGPoint(x: 80, y: 700)
 		addChild(editLabel)
+		
+		configureBoxes(min: 40, max: 50)
 	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -73,32 +90,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			if objects.contains(editLabel) {
 				editingMode = !editingMode
 			} else {
-				
-				//	Create a box
+				//	Enhancement 1. Make balls of different colors.
 				if editingMode {
-					let size = CGSize(width: GKRandomDistribution(lowestValue: 16, highestValue: 128).nextInt(), height: 16)
-					let box = SKSpriteNode(color: RandomColor(), size: size)
-					box.zRotation = RandomCGFloat(min: 0, max: 3)
-					box.position = location
 					
-					box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
-					box.physicsBody?.isDynamic = false
-					addChild(box)
-				} else {	//	Create a ball
-	
-					let ball = SKSpriteNode(imageNamed: "ballRed")
-					ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+					if let box = objects.first(where: { $0.name == "box" }) {
+						destroy(box: box)
+					} else {
+						makeBox(in: location)
+					}
 					
-					//	Contact test bitmask.
-					ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
-					
-					//	Bounciness. Values vary from 0 to 1.0
-					ball.physicsBody?.restitution = 0.4
-					ball.position = location
-					
-					ball.name = "ball"
-					
-					addChild(ball)
+				} else {
+					//	Enhancement 2. Make balls appear only near the top of the screen.
+					if location.y >= 530 && usedBalls < maxBalls {
+						makeBall(in: location)
+						usedBalls += 1
+					}
 				}
 			}
 			
@@ -108,6 +114,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			box.position = location
 			addChild(box)*/
 		}
+	}
+	
+	func makeBox(in location: CGPoint) {
+		let size = CGSize(width: GKRandomDistribution(lowestValue: 16, highestValue: 128).nextInt(), height: 16)
+		let box = SKSpriteNode(color: RandomColor(), size: size)
+		box.zRotation = RandomCGFloat(min: 0, max: 3)
+		box.position = location
+		
+		box.name = "box"
+		
+		box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
+		box.physicsBody?.isDynamic = false
+		addChild(box)
+	}
+	
+	func makeBall(in location: CGPoint) {
+
+		let ballColors = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
+		let randomIndex = RandomInt(min: 0, max: ballColors.count - 1)
+		
+		let ball = SKSpriteNode(imageNamed: ballColors[randomIndex])
+		
+		ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
+		
+		//	Contact test bitmask
+		ball.physicsBody!.contactTestBitMask = ball.physicsBody!.collisionBitMask
+		
+		//	Bounciness. Values vary from 0 to 1.0
+		ball.physicsBody?.restitution = 0.4
+		ball.position = location
+		
+		ball.name = "ball"
+		
+		addChild(ball)
 	}
 	
 	func makeBouncer(at position: CGPoint) {
@@ -151,9 +191,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		if object.name == "good" {
 			destroy(ball: ball)
 			score += 1
+			
+			//	Gives the player an extra ball.
+			usedBalls -= 1
+			
 		} else if object.name == "bad" {
 			destroy(ball: ball)
 			score -= 1
+			
+			//	Add random boxes whenever you get a bad score (from 1 to 5):
+			configureBoxes(min: 1, max: 5)
 		}
 	}
 	
@@ -167,17 +214,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		ball.removeFromParent()
 	}
 	
+	func destroy(box: SKNode) {
+		
+		let fading = SKAction.fadeOut(withDuration: 0.3)
+		box.run(fading)
+		
+		box.removeFromParent()
+	}
+	
 	//	Called when two bodies make contact into each other.
 	func didBegin(_ contact: SKPhysicsContact) {
 		guard let nodeA = contact.bodyA.node else { return }
 		guard let nodeB = contact.bodyB.node else { return }
 		
-		if nodeA.name == "ball" {
+		if nodeA.name == "ball" && nodeB.name != "box" {
 			collisionBetween(ball: nodeA, object: nodeB)
-		} else if nodeB.name == "ball" {
+		} else if nodeB.name == "ball" && nodeA.name != "box" {
 			collisionBetween(ball: nodeB, object: nodeA)
+		} else if nodeA.name == "ball" && nodeB.name == "box"{
+			destroy(box: nodeB)
+		} else if nodeB.name == "ball" && nodeA.name == "box"{
+			destroy(box: nodeA)
 		}
 	}
 	
-	
+	func configureBoxes(min: Int, max: Int) {
+		let numberOfBoxes = RandomInt(min: min, max: max)
+		
+		for _ in 0 ..< numberOfBoxes {
+			let position = RandomPosition(minX: 0, maxX: 1024, minY: 45, maxY: 650)
+			makeBox(in: position)
+		}
+	}
 }
