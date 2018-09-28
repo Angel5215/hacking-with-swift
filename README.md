@@ -48,3 +48,6 @@ Get started with `UICollectionView` and the photo library.
 
 Dive into SpriteKit to try your hand at fast 2D games.
 
+## [Project 12](Project12). `UserDefaults`
+
+Learn how to save user settings and data for later use.
