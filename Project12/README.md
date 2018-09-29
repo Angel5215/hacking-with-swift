@@ -55,3 +55,19 @@ When using `NSCoding` you have to implement a `required` initializer: `required 
 When subclassing a class that has a `required` init, you have to implement that initializer in the subclass.
 
 An alternative use of `required` is to declare that a class can never be subclassed.  
+
+## The `Codable` protocol
+
+When you must write Swift code that lives alongside Objective-C code, the most common option for encoding data is `NSCoding`. However, if you're only using Swift, there's a much easier option called `Codable`.
+
+The primary differences between them are:
+
+1. `Codable` **works on both classes and structs**. 
+2. When using `NSCoding`, you must write an `encode()` and `decodeObject()` methods. With `Codable` this is done for you unless you need more precise control. 
+3. When using `Codable`, you can write data in the same format as `NSCoding`, but `Codable` uses JSON as its default option, which is a more pleasant option.
+
+### Why is SwiftyJSON still necessary?
+
+When you're trying to convert complex JSON into Codable data types, it can be a lot of work, because your data types need to be set up to match the JSON exactly.
+
+**IMPORTANT NOTE: `UserDefaults` is not safe. If you have user information that is private, you should consider writing it to the keychain instead.**
