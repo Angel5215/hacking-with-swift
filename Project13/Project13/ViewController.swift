@@ -22,6 +22,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 	//	Stores whatever filter you activate. It is given various input settings before asking it to output a result.
 	var currentFilter: CIFilter!
 	
+	//	Sharing enhancement
+	var isImageSelected: Bool = false {
+		didSet {
+			navigationItem.leftBarButtonItem?.isEnabled = isImageSelected
+		}
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		isImageSelected = currentImage != nil
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -33,6 +44,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 		context = CIContext()
 		currentFilter = CIFilter(name: "CISepiaTone")
 		
+		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareImage))
+		
 	}
 	
 	@objc func importPicture() {
@@ -42,10 +55,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 		present(picker, animated: true)
 	}
 	
-	
+	@objc func shareImage() {
+		guard let img = imageView.image,
+		let imageToShare = img.jpegData(compressionQuality: 0.8) else { return }
+		
+		let avc = UIActivityViewController(activityItems: [imageToShare], applicationActivities: [])
+		avc.popoverPresentationController?.barButtonItem = navigationItem.leftBarButtonItem
+		
+		present(avc, animated: true)
+	}
 
 	@IBAction func changeFilter(_ sender: Any) {
-		let ac = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet) 
+		let ac = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
 		ac.addAction(UIAlertAction(title: "CIGaussianBlur", style: .default, handler: setFilter))
 		ac.addAction(UIAlertAction(title: "CIPixellate", style: .default, handler: setFilter))
 		ac.addAction(UIAlertAction(title: "CISepiaTone", style: .default, handler: setFilter))
