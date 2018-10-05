@@ -56,3 +56,7 @@ Learn how to save user settings and data for later use.
 
 Make a photo manipulation program using Core Image filters and a UISlider.
 
+## [Project 14](Project14). Whack-a-Penguin
+
+Build a game using `SKCropNode` and a sprinkling of Grand Central Dispatch.
+
