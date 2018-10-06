@@ -56,11 +56,18 @@ class GameScene: SKScene {
 			let location = touch.location(in: self)
 			let tappedNodes = nodes(at: location)
 			
+			
+			
 			for node in tappedNodes {
+			
+				print(node.name == "charFriend", node.name == "charEnemy")
+
 				if node.name == "charFriend" {
 					let whackSlot = node.parent!.parent! as! WhackSlot
 					if !whackSlot.isVisible { continue }
-					if !whackSlot.isHit { continue }
+					if whackSlot.isHit { continue }
+					
+					print("Tapped a good penguin")
 					
 					whackSlot.hit()
 					score -= 5
@@ -70,7 +77,9 @@ class GameScene: SKScene {
 				} else if node.name == "charEnemy" {
 					let whackSlot = node.parent!.parent! as! WhackSlot
 					if !whackSlot.isVisible { continue }
-					if !whackSlot.isHit { continue }
+					if whackSlot.isHit { continue }
+					
+					print("Score!")
 					
 					whackSlot.charNode.xScale = 0.85
 					whackSlot.charNode.yScale = 0.85
