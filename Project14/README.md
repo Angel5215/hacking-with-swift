@@ -1,5 +1,5 @@
 
-# Project 14. Whack-A-Penguin
+# Project 14. Whack-A-Penguin
 
 ## Concepts
 
