@@ -15,6 +15,7 @@
 		FAA2ADE421855215005AAD9F /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2ADE321855215005AAD9F /* ActionViewController.swift */; };
 		FAA2ADE721855215005AAD9F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA2ADE521855215005AAD9F /* MainInterface.storyboard */; };
 		FAA2ADEB21855215005AAD9F /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FAA2ADE121855215005AAD9F /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FAA2ADF12185591A005AAD9F /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = FAA2ADF02185591A005AAD9F /* Action.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FAA2ADE321855215005AAD9F /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		FAA2ADE621855215005AAD9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FAA2ADE821855215005AAD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA2ADF02185591A005AAD9F /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				FAA2ADE321855215005AAD9F /* ActionViewController.swift */,
 				FAA2ADE521855215005AAD9F /* MainInterface.storyboard */,
 				FAA2ADE821855215005AAD9F /* Info.plist */,
+				FAA2ADF02185591A005AAD9F /* Action.js */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA2ADF12185591A005AAD9F /* Action.js in Resources */,
 				FAA2ADE721855215005AAD9F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
