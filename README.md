@@ -64,3 +64,7 @@ Build a game using `SKCropNode` and a sprinkling of Grand Central Dispatch.
 
 Bring your interfaces to life with animation, and meet switch/case at the same time.
 
+## [Project 16](Project16). JavaScript Injection
+
+Extend Safari with a cool feature for JavaScript developers.
+
