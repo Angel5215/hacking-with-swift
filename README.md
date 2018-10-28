@@ -60,3 +60,7 @@ Make a photo manipulation program using Core Image filters and a UISlider.
 
 Build a game using `SKCropNode` and a sprinkling of Grand Central Dispatch.
 
+## [Project 15](Project15). Animation
+
+Bring your interfaces to life with animation, and meet switch/case at the same time.
+
