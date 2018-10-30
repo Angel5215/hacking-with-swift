@@ -68,3 +68,6 @@ Bring your interfaces to life with animation, and meet switch/case at the same t
 
 Extend Safari with a cool feature for JavaScript developers.
 
+## [Project 17](Project17). Swifty Ninja
+
+Learn to draw shapes in SpriteKit while making a fun and tense slicing game.
