@@ -3,7 +3,6 @@
 
 Source code made by following the **Hacking With Swift** book written by Paul Hudson.
 
-
 ## [Project 1](Project01). Storm Viewer
 
 Get started coding in Swift by making an image viewer app and learning key concepts.
@@ -71,3 +70,8 @@ Extend Safari with a cool feature for JavaScript developers.
 ## [Project 17](Project17). Swifty Ninja
 
 Learn to draw shapes in SpriteKit while making a fun and tense slicing game.
+
+## [Project 18](Project18). Debugging
+
+Everyone hits problems sooner or later, so learning to find and fix them is an important skill.
+
