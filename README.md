@@ -75,3 +75,7 @@ Learn to draw shapes in SpriteKit while making a fun and tense slicing game.
 
 Everyone hits problems sooner or later, so learning to find and fix them is an important skill.
 
+## [Project 19](Project19). Capital Cities
+
+Teach users about geography while you learn about `MKMapView` and annotations.
+
