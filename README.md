@@ -82,3 +82,8 @@ Teach users about geography while you learn about `MKMapView` and annotations.
 ## [Project 20](Project20). Fireworks Night
 
 Learn about timers and color blends while making things go bang!
+
+## [Project 21](Project21). Local Notifications
+
+Send reminders, prompts and alerts even when your app isn't running.
+
