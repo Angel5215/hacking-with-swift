@@ -79,3 +79,6 @@ Everyone hits problems sooner or later, so learning to find and fix them is an i
 
 Teach users about geography while you learn about `MKMapView` and annotations.
 
+## [Project 20](Project20). Fireworks Night
+
+Learn about timers and color blends while making things go bang! 
