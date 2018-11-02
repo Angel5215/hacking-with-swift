@@ -81,4 +81,4 @@ Teach users about geography while you learn about `MKMapView` and annotations.
 
 ## [Project 20](Project20). Fireworks Night
 
-Learn about timers and color blends while making things go bang! 
+Learn about timers and color blends while making things go bang!
