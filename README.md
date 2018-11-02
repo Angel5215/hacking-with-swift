@@ -87,3 +87,7 @@ Learn about timers and color blends while making things go bang!
 
 Send reminders, prompts and alerts even when your app isn't running.
 
+## [Project 22](Project22). Detect-a-Beacon
+
+Learn to find and range iBeacons using our first project for a physical device.
+
