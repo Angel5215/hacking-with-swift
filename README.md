@@ -91,3 +91,7 @@ Send reminders, prompts and alerts even when your app isn't running.
 
 Learn to find and range iBeacons using our first project for a physical device.
 
+## [Project 23](Project23). Space Race
+
+Dodge space debris while you learn about per-pixel collision detection.
+
