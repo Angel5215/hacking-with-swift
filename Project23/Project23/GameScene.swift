@@ -109,7 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		let xDifference = abs(player.position.x - location.x)
 		let yDifference = abs(player.position.y - location.y)
 		
-		if xDifference <= 30 && yDifference <= 30 {
+		if xDifference <= 100 && yDifference <= 100 {
 			player.position = location
 		}
 		
