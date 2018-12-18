@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA347D4921C850FA00004FA3 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = FA347D4821C850FA00004FA3 /* laser.png */; };
+		FA347D4B21C850FF00004FA3 /* laser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA347D4A21C850FF00004FA3 /* laser@2x.png */; };
+		FA347D4E21C85B7B00004FA3 /* debrisExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA347D4C21C85B7B00004FA3 /* debrisExplosion.sks */; };
 		FAFD4D7B21C622E800CA3C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD4D7A21C622E800CA3C94 /* AppDelegate.swift */; };
 		FAFD4D7D21C622E800CA3C94 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAFD4D7C21C622E800CA3C94 /* GameScene.sks */; };
 		FAFD4D8121C622E800CA3C94 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD4D8021C622E800CA3C94 /* GameScene.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA347D4821C850FA00004FA3 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
+		FA347D4A21C850FF00004FA3 /* laser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laser@2x.png"; sourceTree = "<group>"; };
+		FA347D4C21C85B7B00004FA3 /* debrisExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = debrisExplosion.sks; sourceTree = "<group>"; };
 		FAFD4D7721C622E800CA3C94 /* Project23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project23.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFD4D7A21C622E800CA3C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAFD4D7C21C622E800CA3C94 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -101,12 +107,15 @@
 				FAFD4D9321C6260900CA3C94 /* tv.png */,
 				FAFD4D9421C6260900CA3C94 /* ball.png */,
 				FAFD4D9521C6260900CA3C94 /* explosion.sks */,
+				FA347D4C21C85B7B00004FA3 /* debrisExplosion.sks */,
 				FAFD4D9621C6260900CA3C94 /* tv@2x.png */,
 				FAFD4D9721C6260900CA3C94 /* bigSpark.png */,
 				FAFD4D9821C6260900CA3C94 /* spark.png */,
 				FAFD4D9921C6260900CA3C94 /* player@2x.png */,
 				FAFD4D9A21C6260900CA3C94 /* ball@2x.png */,
 				FAFD4D9B21C6260900CA3C94 /* hammer.png */,
+				FA347D4821C850FA00004FA3 /* laser.png */,
+				FA347D4A21C850FF00004FA3 /* laser@2x.png */,
 				FAFD4D9C21C6260900CA3C94 /* player.png */,
 				FAFD4D9D21C6260900CA3C94 /* Starfield.sks */,
 				FAFD4D9E21C6260900CA3C94 /* hammer@2x.png */,
@@ -172,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA347D4B21C850FF00004FA3 /* laser@2x.png in Resources */,
 				FAFD4DA821C6260900CA3C94 /* player.png in Resources */,
 				FAFD4DA521C6260900CA3C94 /* player@2x.png in Resources */,
 				FAFD4DA221C6260900CA3C94 /* tv@2x.png in Resources */,
@@ -184,7 +194,9 @@
 				FAFD4DA421C6260900CA3C94 /* spark.png in Resources */,
 				FAFD4DA621C6260900CA3C94 /* ball@2x.png in Resources */,
 				FAFD4DA121C6260900CA3C94 /* explosion.sks in Resources */,
+				FA347D4E21C85B7B00004FA3 /* debrisExplosion.sks in Resources */,
 				FAFD4D8821C622EC00CA3C94 /* Assets.xcassets in Resources */,
+				FA347D4921C850FA00004FA3 /* laser.png in Resources */,
 				FAFD4DA921C6260900CA3C94 /* Starfield.sks in Resources */,
 				FAFD4D8B21C622EC00CA3C94 /* LaunchScreen.storyboard in Resources */,
 				FAFD4DA321C6260900CA3C94 /* bigSpark.png in Resources */,
@@ -353,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project23;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project23b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -371,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project23;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Project23b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
