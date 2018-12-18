@@ -98,3 +98,8 @@ Dodge space debris while you learn about per-pixel collision detection.
 ## [Project 24](Project24). Swift Extensions
 
 Try your hand at improving the built-in data types of Swift.
+
+## [Project 25](Project25). Selfie Share
+
+Make a multipeer photo sharing app in just 150 lines of code.
+
