@@ -95,3 +95,6 @@ Learn to find and range iBeacons using our first project for a physical device.
 
 Dodge space debris while you learn about per-pixel collision detection.
 
+## [Project 24](Project24). Swift Extensions
+
+Try your hand at improving the built-in data types of Swift.
