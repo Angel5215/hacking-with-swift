@@ -103,3 +103,7 @@ Try your hand at improving the built-in data types of Swift.
 
 Make a multipeer photo sharing app in just 150 lines of code.
 
+## [Project 26](Project26). Marble Maze
+
+Respond to device tilting by steering a ball around a vortex maze.
+
