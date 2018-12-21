@@ -27,6 +27,12 @@
 		FA347DAA21CB81EB00004FA3 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = FA347D9D21CB81EB00004FA3 /* star.png */; };
 		FA347DAB21CB81EB00004FA3 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA347D9E21CB81EB00004FA3 /* background@2x.jpg */; };
 		FA347DAC21CB81EB00004FA3 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FA347D9F21CB81EB00004FA3 /* player.png */; };
+		FAD7A8AA21CCDCDB00A40CE8 /* portal.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A8A921CCDCDB00A40CE8 /* portal.png */; };
+		FAD7A8AC21CCDCE000A40CE8 /* portal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A8AB21CCDCE000A40CE8 /* portal@2x.png */; };
+		FAD7A8AE21CCDD8300A40CE8 /* disabledPortal.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A8AD21CCDD8300A40CE8 /* disabledPortal.png */; };
+		FAD7A8B021CCDD8700A40CE8 /* disabledPortal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A8AF21CCDD8700A40CE8 /* disabledPortal@2x.png */; };
+		FAD7A8B221CCDDCE00A40CE8 /* PortalPairNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7A8B121CCDDCE00A40CE8 /* PortalPairNode.swift */; };
+		FAD7A8B421CCE47C00A40CE8 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD7A8B321CCE47C00A40CE8 /* level2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		FA347D9D21CB81EB00004FA3 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		FA347D9E21CB81EB00004FA3 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
 		FA347D9F21CB81EB00004FA3 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		FAD7A8A921CCDCDB00A40CE8 /* portal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portal.png; sourceTree = "<group>"; };
+		FAD7A8AB21CCDCE000A40CE8 /* portal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "portal@2x.png"; sourceTree = "<group>"; };
+		FAD7A8AD21CCDD8300A40CE8 /* disabledPortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disabledPortal.png; sourceTree = "<group>"; };
+		FAD7A8AF21CCDD8700A40CE8 /* disabledPortal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disabledPortal@2x.png"; sourceTree = "<group>"; };
+		FAD7A8B121CCDDCE00A40CE8 /* PortalPairNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalPairNode.swift; sourceTree = "<group>"; };
+		FAD7A8B321CCE47C00A40CE8 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 				FA347D7A21CB80DA00004FA3 /* AppDelegate.swift */,
 				FA347D7C21CB80DA00004FA3 /* GameScene.sks */,
 				FA347D8021CB80DA00004FA3 /* GameScene.swift */,
+				FAD7A8B121CCDDCE00A40CE8 /* PortalPairNode.swift */,
 				FA347D8221CB80DA00004FA3 /* GameViewController.swift */,
 				FA347D8421CB80DA00004FA3 /* Main.storyboard */,
 				FA347D8721CB80DC00004FA3 /* Assets.xcassets */,
@@ -102,6 +115,7 @@
 			children = (
 				FA347D9321CB81EB00004FA3 /* finish@2x.png */,
 				FA347D9421CB81EB00004FA3 /* level1.txt */,
+				FAD7A8B321CCE47C00A40CE8 /* level2.txt */,
 				FA347D9521CB81EB00004FA3 /* star@2x.png */,
 				FA347D9621CB81EB00004FA3 /* player@2x.png */,
 				FA347D9721CB81EB00004FA3 /* background.jpg */,
@@ -113,6 +127,10 @@
 				FA347D9D21CB81EB00004FA3 /* star.png */,
 				FA347D9E21CB81EB00004FA3 /* background@2x.jpg */,
 				FA347D9F21CB81EB00004FA3 /* player.png */,
+				FAD7A8A921CCDCDB00A40CE8 /* portal.png */,
+				FAD7A8AB21CCDCE000A40CE8 /* portal@2x.png */,
+				FAD7A8AD21CCDD8300A40CE8 /* disabledPortal.png */,
+				FAD7A8AF21CCDD8700A40CE8 /* disabledPortal@2x.png */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -175,20 +193,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD7A8AC21CCDCE000A40CE8 /* portal@2x.png in Resources */,
 				FA347DA421CB81EB00004FA3 /* background.jpg in Resources */,
 				FA347D8621CB80DA00004FA3 /* Main.storyboard in Resources */,
 				FA347DA921CB81EB00004FA3 /* vortex@2x.png in Resources */,
+				FAD7A8B421CCE47C00A40CE8 /* level2.txt in Resources */,
 				FA347DA621CB81EB00004FA3 /* block.png in Resources */,
 				FA347D7D21CB80DA00004FA3 /* GameScene.sks in Resources */,
 				FA347DA721CB81EB00004FA3 /* block@2x.png in Resources */,
 				FA347DA221CB81EB00004FA3 /* star@2x.png in Resources */,
 				FA347DA021CB81EB00004FA3 /* finish@2x.png in Resources */,
+				FAD7A8B021CCDD8700A40CE8 /* disabledPortal@2x.png in Resources */,
 				FA347DA821CB81EB00004FA3 /* finish.png in Resources */,
+				FAD7A8AE21CCDD8300A40CE8 /* disabledPortal.png in Resources */,
 				FA347DAC21CB81EB00004FA3 /* player.png in Resources */,
 				FA347DA121CB81EB00004FA3 /* level1.txt in Resources */,
 				FA347DAB21CB81EB00004FA3 /* background@2x.jpg in Resources */,
 				FA347D8821CB80DC00004FA3 /* Assets.xcassets in Resources */,
 				FA347DAA21CB81EB00004FA3 /* star.png in Resources */,
+				FAD7A8AA21CCDCDB00A40CE8 /* portal.png in Resources */,
 				FA347D8B21CB80DC00004FA3 /* LaunchScreen.storyboard in Resources */,
 				FA347DA321CB81EB00004FA3 /* player@2x.png in Resources */,
 				FA347DA521CB81EB00004FA3 /* vortex.png in Resources */,
@@ -205,6 +228,7 @@
 				FA347D8121CB80DA00004FA3 /* GameScene.swift in Sources */,
 				FA347D8321CB80DA00004FA3 /* GameViewController.swift in Sources */,
 				FA347D7B21CB80DA00004FA3 /* AppDelegate.swift in Sources */,
+				FAD7A8B221CCDDCE00A40CE8 /* PortalPairNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

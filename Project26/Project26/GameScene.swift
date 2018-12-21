@@ -15,6 +15,7 @@ enum CollisionTypes: UInt32 {
 	case star = 4		//	0b0000...00000100
 	case vortex = 8		//	0b0000...00001000
 	case finish = 16	//	0b0000...00010000
+	case portal = 32	//	0b0000...00100000
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -32,18 +33,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	var isGameOver = false
 	
-	var currentLevel = "level1"
+	var currentLevel = "level2"
+	
+	var portals: [Character: PortalPairNode] = [:]
 	
 	override func didMove(to view: SKView) {
 		
-		let background = SKSpriteNode(imageNamed: "background.jpg")
-		background.position = CGPoint(x: 512, y: 384)
-		background.blendMode = .replace
-		background.zPosition = -1
-		addChild(background)
-		
 		scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-		scoreLabel.text = "Score: 0"
+		scoreLabel.text = "Score: \(score)"
 		scoreLabel.horizontalAlignmentMode = .left
 		scoreLabel.position = CGPoint(x: 16, y: 16)
 		scoreLabel.zPosition = 1
@@ -65,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	func readLevelFromDisk(levelName: String, ofType type: String = "txt") -> [String]? {
 		
 		if let levelPath = Bundle.main.path(forResource: levelName, ofType: type) {
-			if let levelString = try? String(contentsOfFile: levelPath) {
+			if let levelString = try? String(contentsOfFile: levelPath).trimmingCharacters(in: .whitespacesAndNewlines) {
 				return levelString.components(separatedBy: "\n")
 			}
 		}
@@ -75,6 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	
 	
 	func loadLevel(name: String) {
+		
+		createBackground()
+		
 		if let currentLevelLines = readLevelFromDisk(levelName: name) {
 			for (row, line) in currentLevelLines.reversed().enumerated() {
 				for (column, letter) in line.enumerated() {
@@ -95,9 +95,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			createStar(at: position)
 		case "f":	// Finish
 			createFinish(at: position)
+		case "p", "t", "w":	//	Portals
+			createPortal(at: position, type: letter)
 		default:
 			break
 		}
+	}
+	
+	func createBackground() {
+		let background = SKSpriteNode(imageNamed: "background.jpg")
+		background.position = CGPoint(x: 512, y: 384)
+		background.blendMode = .replace
+		background.zPosition = -1
+		addChild(background)
 	}
 	
 	func createWall(at position: CGPoint) {
@@ -148,6 +158,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		node.physicsBody?.collisionBitMask = 0
 		node.position = position
 		addChild(node)
+	}
+	
+	func createPortal(at position: CGPoint, type: Character) {		
+		if let currentPair = portals[type] {
+			currentPair.setSecond(at: position)
+		} else {
+			print("new \(type)")
+			let newPair = PortalPairNode()
+			newPair.name = "portal"
+			newPair.setFirst(at: position)
+			portals[type] = newPair
+			addChild(newPair)
+		}
 	}
 	
 	func createPlayer() {
@@ -230,7 +253,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			node.removeFromParent()
 			score += 1
 		} else if node.name == "finish" {
-			//	next level?
+			for node in children {
+				let scale = SKAction.scale(to: 0.001, duration: 0.05)
+				let remove = SKAction.removeFromParent()
+				let sequence = SKAction.sequence([scale, remove])
+				
+				node.run(sequence)
+			}
+			
+			lastTouchPosition = nil
+			portals.removeAll()
+			currentLevel = "level2"
+			
+			didMove(to: self.view!)
+			createPlayer()
+		} else if node.name == "first" || node.name == "second" {
+			
+			let pair = node.parent as! PortalPairNode
+			pair.disable()
+			
+			let newPosition = node.name == "first" ? pair.second.position : pair.first.position
+			let move = SKAction.move(to: node.position, duration: 0.25)
+			let scale = SKAction.scale(to: 0.0001, duration: 0.25)
+			let move2 = SKAction.move(to: newPosition, duration: 0)
+			let scale2 = SKAction.scale(to: 1, duration: 0.25)
+			
+			let sequence = SKAction.sequence([move, scale, move2, scale2])
+			player.run(sequence)
 		}
 	}
 	
