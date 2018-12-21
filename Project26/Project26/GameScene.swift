@@ -33,7 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	var isGameOver = false
 	
-	var currentLevel = "level2"
+	var currentLevel = "level1"
 	
 	var portals: [Character: PortalPairNode] = [:]
 	
@@ -253,20 +253,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			node.removeFromParent()
 			score += 1
 		} else if node.name == "finish" {
-			for node in children {
-				let scale = SKAction.scale(to: 0.001, duration: 0.05)
-				let remove = SKAction.removeFromParent()
-				let sequence = SKAction.sequence([scale, remove])
-				
-				node.run(sequence)
-			}
+			
+			removeAllChildren()
 			
 			lastTouchPosition = nil
 			portals.removeAll()
 			currentLevel = "level2"
 			
 			didMove(to: self.view!)
-			createPlayer()
 		} else if node.name == "first" || node.name == "second" {
 			
 			let pair = node.parent as! PortalPairNode
