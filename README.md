@@ -107,3 +107,7 @@ Make a multipeer photo sharing app in just 150 lines of code.
 
 Respond to device tilting by steering a ball around a vortex maze.
 
+## [Project 27](Project27). Core Graphics
+
+Draw 2D shapes using Apple's high-speed drawing framework.
+
