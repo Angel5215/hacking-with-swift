@@ -115,3 +115,7 @@ Draw 2D shapes using Apple's high-speed drawing framework.
 
 Save user data securely using the device keychain and Touch ID.
 
+## [Project 29](Project29). Exploding Monkeys
+
+Remake a classic DOS game and learn about destructible terrain and scene transitions.
+
